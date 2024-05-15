@@ -4,3 +4,4 @@
   - Reference:
     - [Language Models are Unsupervised Multitask Learners](https://d4mucfpksywv.cloudfront.net/better-language-models/language_models_are_unsupervised_multitask_learners.pdf)
     - [Llama 2: Open Foundation and Fine-Tuned Chat Models](https://arxiv.org/abs/2307.09288)
+    - [Tiktokenizer](https://tiktokenizer.vercel.app/)
