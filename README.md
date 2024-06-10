@@ -5,6 +5,7 @@
 
 - Minimal, clean code for the Byte Pair Encoding (BPE) algorithm commonly used in LLM tokenization: https://github.com/karpathy/minbpe/tree/master
     - exercise: https://github.com/karpathy/minbpe/blob/master/exercise.md (refer to `minbpe` and `tests` folder for solution)
+    - my forked repo with solution to the exercise: https://github.com/copyrightly/minbpe/tree/luwei-branch
 - Reference:
     - OpenAI's resources
         - [Language Models are Unsupervised Multitask Learners](https://d4mucfpksywv.cloudfront.net/better-language-models/language_models_are_unsupervised_multitask_learners.pdf) (GPT 2 paper)
