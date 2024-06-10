@@ -11,8 +11,7 @@
     - my forked repo with solution to the exercise: https://github.com/copyrightly/minbpe/tree/luwei-branch
 - Reference:
     - OpenAI's resources
-        - [Language Models are Unsupervised Multitask Learners](https://d4mucfpksywv.cloudfront.net/better-language-models/language_models_are_unsupervised_multitask_learners.pdf) (GPT 2 paper)
-        - Code for the paper "Language Models are Unsupervised Multitask Learners": https://github.com/openai/gpt-2
+        - Code for the GPT2 paper [Language Models are Unsupervised Multitask Learners](https://d4mucfpksywv.cloudfront.net/better-language-models/language_models_are_unsupervised_multitask_learners.pdf): https://github.com/openai/gpt-2
         - Tiktoken: a fast BPE tokeniser for use with OpenAI's models: https://github.com/openai/tiktoken
         - [Efficient Training of Language Models to Fill in the Middle](https://arxiv.org/abs/2207.14255)
         - [Video generation models as world simulators](https://openai.com/index/video-generation-models-as-world-simulators/): Sora
