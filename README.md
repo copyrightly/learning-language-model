@@ -30,7 +30,13 @@
 - [GPT-2 source code using PyTorch on Huggingface](https://github.com/huggingface/transformers/blob/main/src/transformers/models/gpt2/modeling_gpt2.py) (OpenAI's original implementation was using tensorflow)
 - GPT-3 paper [Language Models are Few-Shot Learners](https://arxiv.org/abs/2005.14165) contains details of training, but source code was not released. GPT-2 paper is vague on model training and only inference code and model weights are released, no training code
 - Training acceleration
+    - For local training, use mps (GPU on Mac)
+        - ```
+          if hasattr(torch.backends, "mps") and torch.backends.mps.is_available():
+              device = "mps"
+          ```
     - Use [Automatic Mixed Precision](https://pytorch.org/tutorials/recipes/recipes/amp_recipe.html) to accelerate training
+        - use `torch.set_float32_matmul_precision('high')`
         - focus on [`torch.autocast`](https://pytorch.org/tutorials/recipes/recipes/amp_recipe.html#adding-torch-autocast), ignore gradient scalar
             - `FP32` --> On Tensor Core: `TF32`, `BFLOAT16`, `FP16`
         - use `with torch.autocast(device_type=device, dtype=torch.float16):` for inference and loss computation but not back-propagation
