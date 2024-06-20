@@ -27,8 +27,25 @@
 
 ## GPT-2
 - [Let's reproduce GPT-2 (124M)](https://www.youtube.com/watch?v=l8pRSuU81PU) YouTurbe course by Andrej Karpathy
-- [GPT-2 source code using PyTorch on Huggingface](https://github.com/huggingface/transformers/blob/main/src/transformers/models/gpt2/modeling_gpt2.py) (OpenAI's original implementation was using tensorflow) 
-- Use [Automatic Mixed Precision](https://pytorch.org/tutorials/recipes/recipes/amp_recipe.html) to accelerate training
-    - focus on [`torch.autocast`](https://pytorch.org/tutorials/recipes/recipes/amp_recipe.html#adding-torch-autocast), ignore gradient scalar.
-        - `FP32` -> On Tensor Core: `TF32`, `BFLOAT16`, `FP16`
-    - use `with torch.autocast(device_type=device, dtype=torch.float16):` for inference and loss computation but not back-propagation
+- [GPT-2 source code using PyTorch on Huggingface](https://github.com/huggingface/transformers/blob/main/src/transformers/models/gpt2/modeling_gpt2.py) (OpenAI's original implementation was using tensorflow)
+- Training acceleration
+    - Use [Automatic Mixed Precision](https://pytorch.org/tutorials/recipes/recipes/amp_recipe.html) to accelerate training
+        - focus on [`torch.autocast`](https://pytorch.org/tutorials/recipes/recipes/amp_recipe.html#adding-torch-autocast), ignore gradient scalar.
+            - `FP32` --> On Tensor Core: `TF32`, `BFLOAT16`, `FP16`
+        - use `with torch.autocast(device_type=device, dtype=torch.float16):` for inference and loss computation but not back-propagation
+    - `model = torch.compile(model)`
+        - [Introduction to `torch.compile`](https://pytorch.org/tutorials/intermediate/torch_compile_tutorial.html): e.g. kernel fusion. Without `torch.compile`, there are a lot of round trip between GPU and HBM.
+        - GPU HBM(high bandwidth memory), GPU SRAM, L1 cache, L2 cache, CPU DRAM
+    - An operation not covered by `torch.compile`: [FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness](https://arxiv.org/abs/2205.14135) which uses kernel fusion to compute attention, more FLOPS but less I/O with HBM
+        - Use `torch.nn.functional.scaled_dot_product_attention` to replace the original 4-step attention computation as below
+            - ```
+              att = (q @ k.transpose(-2, -1)) * (1.0 / math.sqrt(k.size(-1)))
+              att = att.masked_fill(self.bias[:,:,:T,:T] == 0, float('-inf'))
+              att = F.softmax(att, dim=-1)
+              y = att @ v # (B, nh, T, T) x (B, nh, T, hs) -> (B, nh, T, hs)
+              ```
+              replaced the above with `y = F.scaled_dot_product_attention(q, k, v, is_causal=True)`
+        - [FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning](https://arxiv.org/abs/2307.08691)
+        - [Online normalizer calculation for softmax](https://arxiv.org/abs/1805.02867)
+    - Use power of 2 (e.g. 1024, 512, ...) for the model's parameters whenever you can
+        - increase the "ugly" number to the nearest "good" number, e.g. 50257 (`vocab_size`) --> 50304
