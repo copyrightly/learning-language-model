@@ -57,4 +57,4 @@
     - Use power of 2 (e.g. 1024, 512, ...) for the model's parameters whenever you can
         - increase the "ugly" number to the nearest "good" number, e.g. 50257 (`vocab_size`) --> 50304
     - When using `grad_accum`, note that we need to [do normalization manually](https://github.com/karpathy/build-nanogpt/blob/master/train_gpt2.py#L498)
-    - 
+    - Use `ddp` (PyTorch's `DistributedDataParallel`)
