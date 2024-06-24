@@ -27,6 +27,7 @@
 
 ## GPT-2
 - [Let's reproduce GPT-2 (124M)](https://www.youtube.com/watch?v=l8pRSuU81PU) YouTurbe course by Andrej Karpathy
+- [llm.c](https://github.com/karpathy/llm.c) a pure C/CUDA LLM training repo
 - [GPT-2 source code using PyTorch on Huggingface](https://github.com/huggingface/transformers/blob/main/src/transformers/models/gpt2/modeling_gpt2.py) (OpenAI's original implementation was using tensorflow)
 - GPT-3 paper [Language Models are Few-Shot Learners](https://arxiv.org/abs/2005.14165) contains details of training, but source code was not released. GPT-2 paper is vague on model training and only inference code and model weights are released, no training code
 - Training acceleration
@@ -62,3 +63,6 @@
     - Datasets (CommonCrawl) mentioned in GPt-2 and 3 papers are never released. The following are open and representative datasets
     - [FineWeb, FineWeb-Edu](https://huggingface.co/spaces/HuggingFaceFW/blogpost-fineweb-v1), it contains a lot of details on how dataset is processed
     - A validation dataset: [HellaSwag: Can a Machine Really Finish Your Sentence?](https://arxiv.org/abs/1905.07830)
+    - Another validation dataset: EleutherAI's lm-evaluation-harness
+    - We can permute the docs to improve the performance, since the order of input docs shouldn't matter
+- The trained model is only a pre-trained language model which just predicts the next token. To make it a conversational model like ChatGPT, you have to fine-tune it into the chat format through SFT (Supervised Fine-tuning): swapping the dataset to make it more conversational and have the "User-Assistant-User-Assistant-..." structure.
