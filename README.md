@@ -27,6 +27,7 @@
 
 ## GPT-2
 - [Let's reproduce GPT-2 (124M)](https://www.youtube.com/watch?v=l8pRSuU81PU) YouTurbe course by Andrej Karpathy
+- GitHub repo: [Video+code lecture on building nanoGPT from scratch](https://github.com/karpathy/build-nanogpt), my [fork](https://github.com/copyrightly/build-nanogpt)
 - [llm.c](https://github.com/karpathy/llm.c) a pure C/CUDA LLM training repo
 - [GPT-2 source code using PyTorch on Huggingface](https://github.com/huggingface/transformers/blob/main/src/transformers/models/gpt2/modeling_gpt2.py) (OpenAI's original implementation was using tensorflow)
 - GPT-3 paper [Language Models are Few-Shot Learners](https://arxiv.org/abs/2005.14165) contains details of training, but source code was not released. GPT-2 paper is vague on model training and only inference code and model weights are released, no training code
