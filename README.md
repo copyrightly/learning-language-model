@@ -58,3 +58,7 @@
         - increase the "ugly" number to the nearest "good" number, e.g. 50257 (`vocab_size`) --> 50304
     - When using `grad_accum`, note that we need to [do normalization manually](https://github.com/karpathy/build-nanogpt/blob/master/train_gpt2.py#L498)
     - Use `ddp` (PyTorch's `DistributedDataParallel`)
+- Dataset
+    - Datasets (CommonCrawl) mentioned in GPt-2 and 3 papers are never released. The following are open and representative datasets
+    - [FineWeb, FineWeb-Edu](https://huggingface.co/spaces/HuggingFaceFW/blogpost-fineweb-v1), it contains a lot of details on how dataset is processed
+    - A validation dataset: [HellaSwag: Can a Machine Really Finish Your Sentence?](https://arxiv.org/abs/1905.07830)
