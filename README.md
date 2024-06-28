@@ -31,6 +31,7 @@
 - [llm.c](https://github.com/karpathy/llm.c) a pure C/CUDA LLM training repo
 - [GPT-2 source code using PyTorch on Huggingface](https://github.com/huggingface/transformers/blob/main/src/transformers/models/gpt2/modeling_gpt2.py) (OpenAI's original implementation was using tensorflow)
 - GPT-3 paper [Language Models are Few-Shot Learners](https://arxiv.org/abs/2005.14165) contains details of training, but source code was not released. GPT-2 paper is vague on model training and only inference code and model weights are released, no training code
+- In GPT2, token embedding and classification head [share the same weight](https://github.com/karpathy/build-nanogpt/blob/master/train_gpt2.py#L94)
 - Training acceleration
     - For local training, use mps (GPU on Mac)
         - ```
