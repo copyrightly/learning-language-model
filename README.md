@@ -103,7 +103,7 @@
               att = F.softmax(att, dim=-1)
               y = att @ v # (B, nh, T, T) x (B, nh, T, hs) -> (B, nh, T, hs)
               ```
-              replaced the above with `y = F.scaled_dot_product_attention(q, k, v, is_causal=True)`
+              replace the above with `y = F.scaled_dot_product_attention(q, k, v, is_causal=True)`
         - [FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning](https://arxiv.org/abs/2307.08691)
         - [Online normalizer calculation for softmax](https://arxiv.org/abs/1805.02867)
     - Use power of 2 (e.g. 1024, 512, ...) for the model's parameters whenever you can
