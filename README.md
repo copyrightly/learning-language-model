@@ -104,6 +104,15 @@
               y = att @ v # (B, nh, T, T) x (B, nh, T, hs) -> (B, nh, T, hs)
               ```
               replace the above with `y = F.scaled_dot_product_attention(q, k, v, is_causal=True)`
+        - Achieves another 1.34x acceleration
+          ```
+          step 0, loss: 10.914501190185547, dt: 23724.97ms, tok/sec: 690.58
+          step 1, loss: 9.553475379943848, dt: 143.33ms, tok/sec: 114306.52
+          step 2, loss: 9.010346412658691, dt: 142.96ms, tok/sec: 114602.75
+          step 3, loss: 8.684494018554688, dt: 143.32ms, tok/sec: 114321.54
+          step 4, loss: 8.625075340270996, dt: 142.83ms, tok/sec: 114712.56
+          step 5, loss: 8.483420372009277, dt: 143.27ms, tok/sec: 114357.87
+          ```
         - [FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning](https://arxiv.org/abs/2307.08691)
         - [Online normalizer calculation for softmax](https://arxiv.org/abs/1805.02867)
     - Use power of 2 (e.g. 1024, 512, ...) for the model's parameters whenever you can
