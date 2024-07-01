@@ -82,6 +82,15 @@
                 - focus on [`torch.autocast`](https://pytorch.org/tutorials/recipes/recipes/amp_recipe.html#adding-torch-autocast), ignore gradient scalar
                     - `FP32` --> On Tensor Core: `TF32`, `BFLOAT16`, `FP16`
     - `model = torch.compile(model)`
+        - Achieves another 1.74x acceleration (compilation may take some time, so latency for the first step is high)
+          ```
+          step 0, loss: 5.339888572692871, dt: 48981.70ms, tok/sec: 334.49
+          step 1, loss: 4.995662689208984, dt: 192.58ms, tok/sec: 85078.13
+          step 2, loss: 5.179999351501465, dt: 192.24ms, tok/sec: 85226.27
+          step 3, loss: 5.047964572906494, dt: 191.40ms, tok/sec: 85601.35
+          step 4, loss: 4.969568729400635, dt: 192.00ms, tok/sec: 85333.37
+          step 5, loss: 5.22182559967041, dt: 192.07ms, tok/sec: 85302.02
+          ```
         - [Introduction to `torch.compile`](https://pytorch.org/tutorials/intermediate/torch_compile_tutorial.html): e.g. kernel fusion. Without `torch.compile`, there are a lot of round trip between GPU and HBM(high bandwidth memory).
         - GPU HBM, GPU SRAM, L1 cache, L2 cache, CPU DRAM
     
