@@ -42,7 +42,7 @@
         - use [`torch.set_float32_matmul_precision('high')`](https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html)
             - There are 3 options: `highest`, `high` and `medium`
             - A100 uses `high` by default
-            - Using `high` can achieve 2.72x acceleration:
+            - Using `high` can achieve 2.72x acceleration (see this [colab notebook](https://colab.research.google.com/drive/1IgYEh7_8ZlI_FqLFEsWq9jT1eRCvAde5#scrollTo=Sawf2-viuKpi)):
                 -  ```
                    my_train(set_matmul_precision="highest")
                    set_float32_matmul_precision: highest
