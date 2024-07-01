@@ -39,7 +39,30 @@
               device = "mps"
           ```
     - Use [Automatic Mixed Precision](https://pytorch.org/tutorials/recipes/recipes/amp_recipe.html) to accelerate training
-        - use `torch.set_float32_matmul_precision('high')`
+        - use [`torch.set_float32_matmul_precision('high')`](https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html)
+            - There are 3 options: `highest`, `high` and `medium`
+            - A100 uses `high` by default
+            - Using `high` can achieve 2.72x acceleration:
+                -  ```
+                   my_train(set_matmul_precision="highest")
+                   set_float32_matmul_precision: highest
+                   step 0, loss: 10.935506820678711, dt: 1086.75ms, tok/sec: 15076.12
+                   step 1, loss: 9.398406982421875, dt: 1041.02ms, tok/sec: 15738.48
+                   step 2, loss: 8.941734313964844, dt: 1040.91ms, tok/sec: 15740.04
+                   step 3, loss: 8.818685531616211, dt: 1041.01ms, tok/sec: 15738.56
+                   step 4, loss: 8.487004280090332, dt: 1040.37ms, tok/sec: 15748.19
+                   step 5, loss: 8.46545124053955, dt: 1040.71ms, tok/sec: 15743.12
+                   ```
+                -  ```
+                   my_train(set_matmul_precision="high")
+                   set_float32_matmul_precision: high
+                   step 0, loss: 6.040699005126953, dt: 393.89ms, tok/sec: 41595.88
+                   step 1, loss: 6.076924800872803, dt: 382.22ms, tok/sec: 42865.76
+                   step 2, loss: 6.007465839385986, dt: 381.85ms, tok/sec: 42906.98
+                   step 3, loss: 6.137106418609619, dt: 381.35ms, tok/sec: 42963.15
+                   step 4, loss: 6.25156307220459, dt: 382.05ms, tok/sec: 42884.92
+                   step 5, loss: 6.0785675048828125, dt: 381.61ms, tok/sec: 42934.08
+                   ```
         - focus on [`torch.autocast`](https://pytorch.org/tutorials/recipes/recipes/amp_recipe.html#adding-torch-autocast), ignore gradient scalar
             - `FP32` --> On Tensor Core: `TF32`, `BFLOAT16`, `FP16`
         - use `with torch.autocast(device_type=device, dtype=torch.float16):` for inference and loss computation but not back-propagation
