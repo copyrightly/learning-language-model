@@ -77,9 +77,9 @@
                    step 4, loss: 5.605069160461426, dt: 335.46ms, tok/sec: 48839.99
                    step 5, loss: 5.438835620880127, dt: 335.48ms, tok/sec: 48838.05
                    ```
-        - focus on [`torch.autocast`](https://pytorch.org/tutorials/recipes/recipes/amp_recipe.html#adding-torch-autocast), ignore gradient scalar
-            - `FP32` --> On Tensor Core: `TF32`, `BFLOAT16`, `FP16`
-        - use `with torch.autocast(device_type=device, dtype=torch.float16):` for inference and loss computation but not back-propagation
+                - focus on [`torch.autocast`](https://pytorch.org/tutorials/recipes/recipes/amp_recipe.html#adding-torch-autocast), ignore gradient scalar
+                    - `FP32` --> On Tensor Core: `TF32`, `BFLOAT16`, `FP16`
+                - use `with torch.autocast(device_type=device, dtype=torch.float16):` for inference and loss computation but not back-propagation
     - `model = torch.compile(model)`
         - [Introduction to `torch.compile`](https://pytorch.org/tutorials/intermediate/torch_compile_tutorial.html): e.g. kernel fusion. Without `torch.compile`, there are a lot of round trip between GPU and HBM.
         - GPU HBM(high bandwidth memory), GPU SRAM, L1 cache, L2 cache, CPU DRAM
