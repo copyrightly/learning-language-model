@@ -82,7 +82,7 @@
                 - focus on [`torch.autocast`](https://pytorch.org/tutorials/recipes/recipes/amp_recipe.html#adding-torch-autocast), ignore gradient scalar
                     - `FP32` --> On Tensor Core: `TF32`, `BFLOAT16`, `FP16`
     - `model = torch.compile(model)`
-        - Achieves another 1.74x acceleration (compilation may take some time, so latency for the first step is high)
+        - Achieves another 1.74x acceleration with very minumal code changes (compilation may take some time, so latency for the first step is high)
           ```
           step 0, loss: 5.339888572692871, dt: 48981.70ms, tok/sec: 334.49
           step 1, loss: 4.995662689208984, dt: 192.58ms, tok/sec: 85078.13
