@@ -64,10 +64,12 @@
                    step 5, loss: 6.0785675048828125, dt: 381.61ms, tok/sec: 42934.08
                    ```
             - Using `bfloat16` (medium mm precision) achieves another 1.14x acceleration
-                -  Enable `bfloat16` as below
+                -  Enable `bfloat16` as below (NOTE: use `with torch.autocast(device_type=device, dtype=torch.float16):` for inference and loss computation but not back-propagation)
                    ```
                    with torch.autocast(device_type=device, dtype=torch.bfloat16):
                        logits, loss = model(x, y)
+                   loss.backward()
+                   optimizer.step()
                    ```
                    ```
                    step 0, loss: 5.3665385246276855, dt: 479.56ms, tok/sec: 34164.62
@@ -79,7 +81,6 @@
                    ```
                 - focus on [`torch.autocast`](https://pytorch.org/tutorials/recipes/recipes/amp_recipe.html#adding-torch-autocast), ignore gradient scalar
                     - `FP32` --> On Tensor Core: `TF32`, `BFLOAT16`, `FP16`
-                - use `with torch.autocast(device_type=device, dtype=torch.float16):` for inference and loss computation but not back-propagation
     - `model = torch.compile(model)`
         - [Introduction to `torch.compile`](https://pytorch.org/tutorials/intermediate/torch_compile_tutorial.html): e.g. kernel fusion. Without `torch.compile`, there are a lot of round trip between GPU and HBM.
         - GPU HBM(high bandwidth memory), GPU SRAM, L1 cache, L2 cache, CPU DRAM
