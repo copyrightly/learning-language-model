@@ -116,7 +116,16 @@
         - [FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning](https://arxiv.org/abs/2307.08691)
         - [Online normalizer calculation for softmax](https://arxiv.org/abs/1805.02867)
     - Use power of 2 (e.g. 1024, 512, ...) for the model's parameters whenever you can
-        - increase the "ugly" number to the nearest "good" number, e.g. 50257 (`vocab_size`) --> 50304
+        - Increase the "ugly" number to the nearest "good" number, e.g. 50257 (`vocab_size`) --> 50304
+        - Achieved another 1.42x accleration
+          ```
+          step 0, loss: 10.917964935302734, dt: 25896.77ms, tok/sec: 632.67
+          step 1, loss: 10.942741394042969, dt: 100.96ms, tok/sec: 162274.40
+          step 2, loss: 10.936779022216797, dt: 100.64ms, tok/sec: 162804.55
+          step 3, loss: 10.942054748535156, dt: 100.90ms, tok/sec: 162376.01
+          step 4, loss: 10.943706512451172, dt: 100.19ms, tok/sec: 163523.19
+          step 5, loss: 10.938545227050781, dt: 101.19ms, tok/sec: 161919.19
+          ```
     - When using `grad_accum`, note that we need to [do normalization manually](https://github.com/karpathy/build-nanogpt/blob/master/train_gpt2.py#L498)
     - Use `ddp` (PyTorch's `DistributedDataParallel`)
 - Dataset
