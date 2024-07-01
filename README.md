@@ -82,8 +82,9 @@
                 - focus on [`torch.autocast`](https://pytorch.org/tutorials/recipes/recipes/amp_recipe.html#adding-torch-autocast), ignore gradient scalar
                     - `FP32` --> On Tensor Core: `TF32`, `BFLOAT16`, `FP16`
     - `model = torch.compile(model)`
-        - [Introduction to `torch.compile`](https://pytorch.org/tutorials/intermediate/torch_compile_tutorial.html): e.g. kernel fusion. Without `torch.compile`, there are a lot of round trip between GPU and HBM.
-        - GPU HBM(high bandwidth memory), GPU SRAM, L1 cache, L2 cache, CPU DRAM
+        - [Introduction to `torch.compile`](https://pytorch.org/tutorials/intermediate/torch_compile_tutorial.html): e.g. kernel fusion. Without `torch.compile`, there are a lot of round trip between GPU and HBM(high bandwidth memory).
+        - GPU HBM, GPU SRAM, L1 cache, L2 cache, CPU DRAM
+          ![Memory Hierarchy with Bandwidth & Memory Size]()
     - An operation not covered by `torch.compile`: [FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness](https://arxiv.org/abs/2205.14135) which uses kernel fusion to compute attention, more FLOPS but less I/O with HBM
         - Use `torch.nn.functional.scaled_dot_product_attention` to replace the original 4-step attention computation as below
             - ```
