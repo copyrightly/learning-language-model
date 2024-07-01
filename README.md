@@ -63,20 +63,20 @@
                    step 4, loss: 6.25156307220459, dt: 382.05ms, tok/sec: 42884.92
                    step 5, loss: 6.0785675048828125, dt: 381.61ms, tok/sec: 42934.08
                    ```
-        - Using `bfloat16` (medium mm precision) achieves another 1.14x acceleration
-            -  Enable `bfloat16` as below
-               ```
-               with torch.autocast(device_type=device, dtype=torch.bfloat16):
-                   logits, loss = model(x, y)
-               ```
-               ```
-               step 0, loss: 5.3665385246276855, dt: 479.56ms, tok/sec: 34164.62
-               step 1, loss: 5.395938873291016, dt: 335.05ms, tok/sec: 48899.52
-               step 2, loss: 5.3074469566345215, dt: 335.44ms, tok/sec: 48843.25
-               step 3, loss: 5.491395950317383, dt: 335.07ms, tok/sec: 48897.92
-               step 4, loss: 5.605069160461426, dt: 335.46ms, tok/sec: 48839.99
-               step 5, loss: 5.438835620880127, dt: 335.48ms, tok/sec: 48838.05
-               ```
+            - Using `bfloat16` (medium mm precision) achieves another 1.14x acceleration
+                -  Enable `bfloat16` as below
+                   ```
+                   with torch.autocast(device_type=device, dtype=torch.bfloat16):
+                       logits, loss = model(x, y)
+                   ```
+                   ```
+                   step 0, loss: 5.3665385246276855, dt: 479.56ms, tok/sec: 34164.62
+                   step 1, loss: 5.395938873291016, dt: 335.05ms, tok/sec: 48899.52
+                   step 2, loss: 5.3074469566345215, dt: 335.44ms, tok/sec: 48843.25
+                   step 3, loss: 5.491395950317383, dt: 335.07ms, tok/sec: 48897.92
+                   step 4, loss: 5.605069160461426, dt: 335.46ms, tok/sec: 48839.99
+                   step 5, loss: 5.438835620880127, dt: 335.48ms, tok/sec: 48838.05
+                   ```
         - focus on [`torch.autocast`](https://pytorch.org/tutorials/recipes/recipes/amp_recipe.html#adding-torch-autocast), ignore gradient scalar
             - `FP32` --> On Tensor Core: `TF32`, `BFLOAT16`, `FP16`
         - use `with torch.autocast(device_type=device, dtype=torch.float16):` for inference and loss computation but not back-propagation
