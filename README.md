@@ -135,3 +135,17 @@
     - Another validation dataset: EleutherAI's lm-evaluation-harness
     - We can permute the docs to improve the performance, since the order of input docs shouldn't matter
 - The trained model is only a pre-trained language model which just predicts the next token. To make it a conversational model like ChatGPT, you have to fine-tune it into the chat format through SFT (Supervised Fine-tuning): swapping the dataset to make it more conversational and have the "User-Assistant-User-Assistant-..." structure.
+- Upload and download files in Google colab:
+    - upload
+      ```
+      from google.colab import files
+      uploaded = files.upload()
+      ```
+      It will prompt you to upload a file.
+    - download
+      ```
+      import os
+      print(os.getcwd()) # check the current working directory
+      !ls # list the files and verify that the file exists
+      files.download("path/to/file")
+      ```
