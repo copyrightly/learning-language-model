@@ -150,5 +150,6 @@
       files.download("path/to/file")
       ```
 
-## Miscellaneous 
+## llama 
 - [Llama and Llama 2](https://llama.meta.com/)
+- [nano-llama3.1](https://github.com/karpathy/nano-llama31)
