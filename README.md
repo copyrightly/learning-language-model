@@ -152,4 +152,4 @@
 
 ## llama 
 - [Llama and Llama 2](https://llama.meta.com/)
-- [nano-llama3.1](https://github.com/karpathy/nano-llama31)
+- [nano-llama3.1](https://github.com/karpathy/nano-llama31) by Andrej Karpathy
