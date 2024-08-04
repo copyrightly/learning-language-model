@@ -149,6 +149,7 @@
       !ls # list the files and verify that the file exists
       files.download("path/to/file")
       ```
+- my colab notebook of [fine_turn_GPT2_with_Simpsons](https://colab.research.google.com/drive/1R7NnbvjIrl2xgzCB7yuC5-aoN7kmmcTt#scrollTo=sb2_GZkJ6ZsC)
 
 ## llama 
 - [Llama and Llama 2](https://llama.meta.com/)
