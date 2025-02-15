@@ -156,6 +156,7 @@
 - [nano-llama3.1](https://github.com/karpathy/nano-llama31) by Andrej Karpathy
 
 ## Dive into LLMs like ChatGPT
-- pretraining: download and preprocess the internet
-    - dataset: [FineWeb by HuggingFace](https://huggingface.co/spaces/HuggingFaceFW/blogpost-fineweb-v1)
-- tokenization
+- pretraining
+    - Step 1: download and preprocess the internet
+      - dataset: [FineWeb by HuggingFace](https://huggingface.co/spaces/HuggingFaceFW/blogpost-fineweb-v1)
+    - Step 2: tokenization
