@@ -155,10 +155,12 @@
 - [Llama and Llama 2](https://llama.meta.com/)
 - [nano-llama3.1](https://github.com/karpathy/nano-llama31) by Andrej Karpathy
 
-## [Dive into LLMs like ChatGPT by Andrej Karpathy](https://www.youtube.com/watch?v=7xTGNNLPyMI)
+## Dive into LLMs like ChatGPT by Andrej Karpathy
+- [Youtube link](https://www.youtube.com/watch?v=7xTGNNLPyMI)
 - pretraining
     - Step 1: download and preprocess the internet
       - dataset: [FineWeb by HuggingFace](https://huggingface.co/spaces/HuggingFaceFW/blogpost-fineweb-v1)
     - Step 2: tokenization
       - https://tiktokenizer.vercel.app/
     - Step 3: neural network training
+      - LLM visualization: https://bbycroft.net/llm
