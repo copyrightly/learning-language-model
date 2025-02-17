@@ -163,4 +163,6 @@
     - Step 2: tokenization
       - https://tiktokenizer.vercel.app/
     - Step 3: neural network training
-      - LLM visualization: https://bbycroft.net/llm
+      - neural network internals
+        - LLM visualization: https://bbycroft.net/llm
+      - inference
