@@ -174,3 +174,9 @@
       - maximum context length of 1024 tokens
       - trained on about 100 billion tokens
     -  Andrew's reporduction with llm.c https://github.com/karpathy/llm.c/discussions/677
+- "Base" models in the wild
+    - OpenAI GPT-2 (2019): 1.6 billion parameters trained on 100 billion tokens
+    - Llama 3 (2024): 405 billion parameters trained on 15 trillion tokens
+    - What is a release of a model?
+      - The code for running the Transformer (e.g. 200 lines of code in Python)
+      - The parameters of the Transformer (e.g. 1.6 billion numbers) 
