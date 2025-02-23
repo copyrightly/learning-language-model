@@ -170,8 +170,7 @@
     -  GPT-2 was published by OpenAI in 2019
     -  Paper: Language Models are Unsupervised Multitask Learners
     -  Transformer neural network with
-      - 1.6 billion parameters
-      - maximum context length of 1024 tokens
-      - trained on about 100 billion tokens
+      -  1.6 billion parameters
+      -  maximum context length of 1024 tokens
+      -  trained on about 100 billion tokens
     -  Andrew's reporduction with llm.c https://github.com/karpathy/llm.c/discussions/677
-    -  
