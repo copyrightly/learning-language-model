@@ -185,4 +185,4 @@
       - just auto-complete instead of answering questions (What's Riemann Hypothesis?)
       - recitation by memorization (zebra on wiki)
       - hullicination (make up statements after the deadline of the training data), e.g. no knowledge about US election in 2024
-      - even it's just completing the sentences, it still can be applied to practical uses 
+      - even it's just completing the sentences, it still can be used in practical applications 
