@@ -179,4 +179,10 @@
     - Llama 3 (2024): 405 billion parameters trained on 15 trillion tokens
     - What is a release of a model?
       - The code for running the Transformer (e.g. 200 lines of code in Python)
-      - The parameters of the Transformer (e.g. 1.6 billion numbers) 
+      - The parameters of the Transformer (e.g. 1.6 billion numbers)
+    - [hyperbolic](https://app.hyperbolic.xyz/) is a good tool to interact with base model, whic is only capable of auto-completion instead of Q&A (registration is required)
+      - llama 3.1 405B Base
+      - just auto-complete instead of answering questions (What's Riemann Hypothesis?)
+      - recitation by memorization (zebra on wiki)
+      - hullicination (make up statements after the deadline of the training data), e.g. no knowledge about US election in 2024
+      - even it's just completing the sentences, it still can be applied to practical uses 
