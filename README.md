@@ -180,8 +180,11 @@
     - What is a release of a model?
       - The code for running the Transformer (e.g. 200 lines of code in Python)
       - The parameters of the Transformer (e.g. 1.6 billion numbers)
-    - [hyperbolic](https://app.hyperbolic.xyz/) is a good tool to interact with base model, whic is only capable of auto-completion instead of Q&A (registration is required)
-      - llama 3.1 405B Base
+    - Run the Llama 3.1 305B base model: https://app.hyperbolic.xyz/models/llama31-405b-base
+      - [hyperbolic](https://app.hyperbolic.xyz/) is a good tool to interact with base model, which is only capable of auto-completion instead of Q&A (registration is required)
+  - The "psychology" of a base model
+    - It is a token-level internet document simulator
+    - 
       - just auto-complete instead of answering questions (What's Riemann Hypothesis?)
       - recitation by memorization (zebra on wiki)
       - hullicination (make up statements after the deadline of the training data), e.g. no knowledge about US election in 2024
