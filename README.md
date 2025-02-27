@@ -184,10 +184,11 @@
       - [hyperbolic](https://app.hyperbolic.xyz/) is a good tool to interact with base model, which is only capable of auto-completion instead of Q&A (registration is required)
   - The "psychology" of a base model
     - It is a token-level internet document simulator
-    - 
-      - just auto-complete instead of answering questions (What's Riemann Hypothesis?)
-      - recitation by memorization (zebra on wiki)
-      - hullicination (make up statements after the deadline of the training data), e.g. no knowledge about US election in 2024
-      - even it's just completing the sentences, it still can be used in practical applications
-        - few-shot prompt, in-place context learning ability
-        - create an assistant even it's just a base model 
+    - It is stochastic/probabilistic - you're going to get something else each time you run
+    - It just auto-completes instead of answering questions
+    - It "dreams" internet documents (make up statements after the deadline of the training data)
+    - It can also recite some training documents verbatim from memory ("regurgitation")
+    - The parameters of the model are kind of like a lossy zip file of the internet => a lot of useful world knowledge is stored in the parameters of the network
+    - You can already use it for applications (e.g. translation) by being clever with your prompts
+      - e.g. English:Korean tranlator app by constructing a "few-shot" prompt and leveraging "in-context learning" ability
+      - e.g. an Assistant that answers questions using a prompt that looks like a conversation
