@@ -185,10 +185,15 @@
   - The "psychology" of a base model
     - It is a token-level internet document simulator
     - It is stochastic/probabilistic - you're going to get something else each time you run
-    - It just auto-completes instead of answering questions
+    - It is just sentence-completion instead of answering questions
+      ![sentence completion instead of answering](sentence_completion_instead_of_answering.png)
     - It "dreams" internet documents (make up statements after the deadline of the training data)
+      ![make up statements](hallucination.png)
     - It can also recite some training documents verbatim from memory ("regurgitation")
+      ![recite wikipedia](recitation.png)
     - The parameters of the model are kind of like a lossy zip file of the internet => a lot of useful world knowledge is stored in the parameters of the network
     - You can already use it for applications (e.g. translation) by being clever with your prompts
       - e.g. English:Korean tranlator app by constructing a "few-shot" prompt and leveraging "in-context learning" ability
+        ![English-Korean translation](english_korean_translation.png)
       - e.g. an Assistant that answers questions using a prompt that looks like a conversation
+        ![create an assistant using prompt](create_an_assistant_using_prompt.png)
