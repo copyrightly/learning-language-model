@@ -165,7 +165,7 @@
     - Step 3: neural network training
       - neural network internals
         - LLM visualization: https://bbycroft.net/llm
-      - inference
+    - Step 4: inference
 - Demo: reproducing OpenAI's GPT-2
     - GPT-2 was published by OpenAI in 2019
     - Paper: Language Models are Unsupervised Multitask Learners
