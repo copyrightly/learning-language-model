@@ -197,3 +197,5 @@
           ![English-Korean translation](english_korean_translation.png)
         - e.g. an Assistant that answers questions using a prompt that looks like a conversation
           ![create an assistant using prompt](create_an_assistant_using_prompt.png)
+- post-training
+- 
