@@ -198,5 +198,16 @@
       - e.g. an Assistant that answers questions using a prompt that looks like a conversation
         ![create an assistant using prompt](create_an_assistant_using_prompt.png)
 - post-training
-  - convert dialog training data into 1D token sequence
-  - paper: Training language models to follow instructions with human feedback 
+  - Conversations
+  - Conversation Protocol/Format: convert dialog training data into 1D token sequence
+  - Conversation Datasets:
+    - Early work: 2022 InstructGPT paper: Training language models to follow instructions with human feedback
+    - Human Labelers write Conversations based on Labeling Instructions
+    - Today, a huge amount of labeling is LLM assisted (e.g. humnas edit more than write), or just entirely synthetic. 
+    - dataset:
+      - https://huggingface.co/datasets/OpenAssistant/oasst1
+      - https://github.com/thunlp/UltraChat
+      - data visualization tool: https://docs.nomic.ai/
+  - Hallucinations
+    - [screenshot]
+    - Section 4.3.6 Factuality in [Llama3 paper](https://arxiv.org/pdf/2407.21783), investigated this issue  
