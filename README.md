@@ -158,6 +158,7 @@
 ## Dive into LLMs like ChatGPT by Andrej Karpathy
 - [Youtube link](https://www.youtube.com/watch?v=7xTGNNLPyMI)
 - pretraining
+  - hey here
     - Step 1: download and preprocess the internet
       - dataset: [FineWeb by HuggingFace](https://huggingface.co/spaces/HuggingFaceFW/blogpost-fineweb-v1)
     - Step 2: tokenization
@@ -198,4 +199,5 @@
         - e.g. an Assistant that answers questions using a prompt that looks like a conversation
           ![create an assistant using prompt](create_an_assistant_using_prompt.png)
 - post-training
-- 
+  - convert dialog training data into 1D token sequence
+  - paper: Training language models to follow instructions with human feedback 
