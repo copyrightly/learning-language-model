@@ -158,46 +158,45 @@
 ## Dive into LLMs like ChatGPT by Andrej Karpathy
 - [Youtube link](https://www.youtube.com/watch?v=7xTGNNLPyMI)
 - pretraining
-  - hey here
-    - Step 1: download and preprocess the internet
-      - dataset: [FineWeb by HuggingFace](https://huggingface.co/spaces/HuggingFaceFW/blogpost-fineweb-v1)
-    - Step 2: tokenization
-      - https://tiktokenizer.vercel.app/
-    - Step 3: neural network training
-      - neural network internals
-        - LLM visualization: https://bbycroft.net/llm
-    - Step 4: inference
-    - Demo: reproducing OpenAI's GPT-2
-        - GPT-2 was published by OpenAI in 2019
-        - Paper: Language Models are Unsupervised Multitask Learners
-        - Transformer neural network with
-          - 1.6 billion parameters
-          - maximum context length of 1024 tokens
-          - trained on about 100 billion tokens
-        -  Andrew's reporduction with llm.c https://github.com/karpathy/llm.c/discussions/677
-    - "Base" models in the wild
-        - OpenAI GPT-2 (2019): 1.6 billion parameters trained on 100 billion tokens
-        - Llama 3 (2024): 405 billion parameters trained on 15 trillion tokens
-        - What is a release of a model?
-          - The code for running the Transformer (e.g. 200 lines of code in Python)
-          - The parameters of the Transformer (e.g. 1.6 billion numbers)
-        - Run the Llama 3.1 305B base model: https://app.hyperbolic.xyz/models/llama31-405b-base
-          - [hyperbolic](https://app.hyperbolic.xyz/) is a good tool to interact with base model, which is only capable of auto-completion instead of Q&A (registration is required)
-    - The "psychology" of a base model
-      - It is a token-level internet document simulator
-      - It is stochastic/probabilistic - you're going to get something else each time you run
-      - It is just sentence-completion instead of answering questions
-        ![sentence completion instead of answering](sentence_completion_instead_of_answering.png)
-      - It "dreams" internet documents (make up statements after the deadline of the training data)
-        ![make up statements](hallucination.png)
-      - It can also recite some training documents verbatim from memory ("regurgitation")
-        ![recite wikipedia](recitation.png)
-      - The parameters of the model are kind of like a lossy zip file of the internet => a lot of useful world knowledge is stored in the parameters of the network
-      - You can already use it for applications (e.g. translation) by being clever with your prompts
-        - e.g. English:Korean tranlator app by constructing a "few-shot" prompt and leveraging "in-context learning" ability
-          ![English-Korean translation](english_korean_translation.png)
-        - e.g. an Assistant that answers questions using a prompt that looks like a conversation
-          ![create an assistant using prompt](create_an_assistant_using_prompt.png)
+  - Step 1: download and preprocess the internet
+    - dataset: [FineWeb by HuggingFace](https://huggingface.co/spaces/HuggingFaceFW/blogpost-fineweb-v1)
+  - Step 2: tokenization
+    - https://tiktokenizer.vercel.app/
+  - Step 3: neural network training
+    - neural network internals
+      - LLM visualization: https://bbycroft.net/llm
+  - Step 4: inference
+  - Demo: reproducing OpenAI's GPT-2
+      - GPT-2 was published by OpenAI in 2019
+      - Paper: Language Models are Unsupervised Multitask Learners
+      - Transformer neural network with
+        - 1.6 billion parameters
+        - maximum context length of 1024 tokens
+        - trained on about 100 billion tokens
+      -  Andrew's reporduction with llm.c https://github.com/karpathy/llm.c/discussions/677
+  - "Base" models in the wild
+      - OpenAI GPT-2 (2019): 1.6 billion parameters trained on 100 billion tokens
+      - Llama 3 (2024): 405 billion parameters trained on 15 trillion tokens
+      - What is a release of a model?
+        - The code for running the Transformer (e.g. 200 lines of code in Python)
+        - The parameters of the Transformer (e.g. 1.6 billion numbers)
+      - Run the Llama 3.1 305B base model: https://app.hyperbolic.xyz/models/llama31-405b-base
+        - [hyperbolic](https://app.hyperbolic.xyz/) is a good tool to interact with base model, which is only capable of auto-completion instead of Q&A (registration is required)
+  - The "psychology" of a base model
+    - It is a token-level internet document simulator
+    - It is stochastic/probabilistic - you're going to get something else each time you run
+    - It is just sentence-completion instead of answering questions
+      ![sentence completion instead of answering](sentence_completion_instead_of_answering.png)
+    - It "dreams" internet documents (make up statements after the deadline of the training data)
+      ![make up statements](hallucination.png)
+    - It can also recite some training documents verbatim from memory ("regurgitation")
+      ![recite wikipedia](recitation.png)
+    - The parameters of the model are kind of like a lossy zip file of the internet => a lot of useful world knowledge is stored in the parameters of the network
+    - You can already use it for applications (e.g. translation) by being clever with your prompts
+      - e.g. English:Korean tranlator app by constructing a "few-shot" prompt and leveraging "in-context learning" ability
+        ![English-Korean translation](english_korean_translation.png)
+      - e.g. an Assistant that answers questions using a prompt that looks like a conversation
+        ![create an assistant using prompt](create_an_assistant_using_prompt.png)
 - post-training
   - convert dialog training data into 1D token sequence
   - paper: Training language models to follow instructions with human feedback 
