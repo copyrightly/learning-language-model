@@ -211,3 +211,9 @@
   - Hallucinations
     - [screenshot]
     - Section 4.3.6 Factuality in [Llama3 paper](https://arxiv.org/pdf/2407.21783), investigated this issue  
+    - Mitigation #1
+      - Use model interrogation to discover model's knowledge, and programmatically augment its training dataset with knowledge-based refusals in cases where the model doesn't know. E.g.:
+        - new training example:
+          - Human: "Who is Orson Kovacs
+          - Assistant: "I'm sorry, I don't beleve Iknow"
+          - 
