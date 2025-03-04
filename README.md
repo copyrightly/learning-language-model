@@ -214,6 +214,10 @@
     - Mitigation #1
       - Use model interrogation to discover model's knowledge, and programmatically augment its training dataset with knowledge-based refusals in cases where the model doesn't know. E.g.:
         - new training example:
-          - Human: "Who is Orson Kovacs
-          - Assistant: "I'm sorry, I don't beleve Iknow"
-          - 
+          - | Human: "Who is Orson Kovacs?" Assistant: "I'm sorry, I don't beleve Iknow" |
+            |----------|
+    - Mitigation #2
+      - Allow the model to search!
+      - | Human: "Who is Orson Kovacs?" Assistant: "<SEARCH_START>Who is Orson Kovacs?<SEARCH_END>[...] Orson Kovacs appears to be ..." |
+        |------------------------------|
+      - 
