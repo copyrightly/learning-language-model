@@ -228,4 +228,5 @@
     - insert the information in the system prompt
   - Models need tokens to think
     - The left one guesses the answer at very beginning and tries to justify the answer afterwards. The computation focuses on a single token.
-    - The right one makes reasoning step by step 
+    - The right one makes reasoning step by step
+    - Ask the model to use tools (e.g. "Use code")
