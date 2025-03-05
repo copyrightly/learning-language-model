@@ -220,4 +220,12 @@
       - Allow the model to search!
       - | Human: "Who is Orson Kovacs?" Assistant: "<SEARCH_START>Who is Orson Kovacs?<SEARCH_END>[...] Orson Kovacs appears to be ..." |
         |------------------------------|
-      - 
+  - !!! "Vague recollection" vs. "Working memory"!!!
+    - Knowledge in the parameters == Vague recollection (e.g. of something you read 1 month ago)
+    - Knowledge in the tokens of the context window == Working memory
+  - Knowledge of self
+    - create Q&A examples in the training dataset
+    - insert the information in the system prompt
+  - Models need tokens to think
+    - The left one guesses the answer at very beginning and tries to justify the answer afterwards. The computation focuses on a single token.
+    - The right one makes reasoning step by step 
