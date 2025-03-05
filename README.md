@@ -197,7 +197,7 @@
         ![English-Korean translation](english_korean_translation.png)
       - e.g. an Assistant that answers questions using a prompt that looks like a conversation
         ![create an assistant using prompt](create_an_assistant_using_prompt.png)
-- post-training
+- post-training: supervised finetuning
   - Conversations
   - Conversation Protocol/Format: convert dialog training data into 1D token sequence
   - Conversation Datasets:
@@ -230,3 +230,7 @@
     - The left one guesses the answer at very beginning and tries to justify the answer afterwards. The computation focuses on a single token.
     - The right one makes reasoning step by step
     - Ask the model to use tools (e.g. "Use code")
+  - Models are not good with spelling
+    - Remember they see tokens (text chunks), not individual letters!
+  - Bunch of other small random stuff
+    - 9.9 and 9.11  
