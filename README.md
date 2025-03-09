@@ -239,3 +239,6 @@
     - Code (Python interpreter)
 - POST-TRAINING: REINFORCEMENT LEARNING
   - [analogy of RL] 
+  - [DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning](https://arxiv.org/abs/2501.12948)
+    - https://chat.deepseek.com/ (make sure you enabled (DeepThink R1))
+    - alternatively you can go to https://www.together.ai/ and select "DEEPSEEK R1"
