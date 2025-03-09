@@ -157,6 +157,7 @@
 
 ## Dive into LLMs like ChatGPT by Andrej Karpathy
 - [Youtube link](https://www.youtube.com/watch?v=7xTGNNLPyMI)
+- The specific file of Excalidraw he built up (open with https://excalidraw.com/): https://drive.google.com/file/d/1EZh5hNDzxMMy05uLhVryk061QYQGTxiN/view
 - PRETRAINING
   - Step 1: download and preprocess the internet
     - dataset: [FineWeb by HuggingFace](https://huggingface.co/spaces/HuggingFaceFW/blogpost-fineweb-v1)
@@ -238,7 +239,40 @@
     - Web search
     - Code (Python interpreter)
 - POST-TRAINING: REINFORCEMENT LEARNING
-  - [analogy of RL] 
+  - [analogy of RL]
+  - AlphaGo paper: https://discovery.ucl.ac.uk/id/eprint/10045895/1/agz_unformatted_nature.pdf
   - [DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning](https://arxiv.org/abs/2501.12948)
     - https://chat.deepseek.com/ (make sure you enabled (DeepThink R1))
+      - [screenshot]
     - alternatively you can go to https://www.together.ai/ and select "DEEPSEEK R1"
+  - Reinforcement Learning in un-verifiable domains => RLHF (Reinforcement Learning from Human Feedback)
+    - [Fine-Tuning Language Models from Human Preferences](https://arxiv.org/abs/1909.08593)
+    - e.g. prompt: "write a joke about pelicans"
+    - problem: how do we score these?
+    - [screenshot of joke]
+    - make reward model's output be consistent with human ordering
+  - RLHF upside
+    - We can run RL, in arbitrary domains! (even the unverifiable ones). This (empirically) improves the performance of the model, possibly due to the "discriminator - generator gap":
+
+      In many cases, it is much easier to discriminate than to generate. e.g. "Write a poem" v.s. "Which of these 5 poems is best?"
+  - RLHF downside
+    - We are doing RL with respect to a lossy simulation of humans. It might be misleading!
+
+      Even more subtle: RL discovers ways to "game" the model. e.g. after 1000 updates, the top joke about pelicans is not the banger you want, but something totally non-sensical like "the the the the the the the the the".
+
+      RLHF is more like fine-tuning, not the magical RL you expect (like those with verifiable answers).
+- PREVIEW OF THINGS TO COME
+  - multimodel (not just text but audio, images, video, natural conversations)
+  - tasks -> agents (long, coherent, error-correcting contexts)
+  - prevasive, invisible
+  - computer-using
+  - test-time training?, etc.
+- WHERE TO KEEP TRACK OF THEM
+  - LM Arena for model rankings: https://lmarena.ai/
+  - subscribe to https://buttondown.com/ainews
+  - X / Twitter
+- WHERE TO FIND THEM
+  - Proprietary models: on the respective websites of the LLM providers
+  - Open weights models (DeepSeek, Llama): an inference provider, e.g. TogetherAI (clike Playgrounds and pick models)
+  - Base models: Hyperbolic
+  - Run them locally! LMStudio
