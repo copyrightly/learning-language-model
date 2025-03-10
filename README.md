@@ -162,11 +162,23 @@
   - Step 1: download and preprocess the internet
     - dataset: [FineWeb by HuggingFace](https://huggingface.co/spaces/HuggingFaceFW/blogpost-fineweb-v1)
   - Step 2: tokenization
+    - Converts text <---> sequences of symbols (/tokens)
+      - Start with stream of bytes (256 tokens)
+      - Run the Byte Pair Encoding algorithm (iteratively merge the most common token pair to mint new token)
+      
+      Example: ~5000 text characters
+      
+      ~= 40,000 bits (with vocabulary size of 2 tokens: bits 0/1)
+      
+      ~= 5000 bytes (with vocabulary size of 256 tokens: bytes)
+      
+      ~= 1300 GPT-4 tokens (vocabulary size 100,277) 
     - https://tiktokenizer.vercel.app/
+      [screenshot of tiktoken]
   - Step 3: neural network training
     - neural network internals
       - LLM visualization: https://bbycroft.net/llm
-  - Step 4: inference
+  - Step 4: inference: to generate data, just predict one token at a time
   - Demo: reproducing OpenAI's GPT-2
       - GPT-2 was published by OpenAI in 2019
       - Paper: Language Models are Unsupervised Multitask Learners
@@ -260,7 +272,10 @@
 
       Even more subtle: RL discovers ways to "game" the model. e.g. after 1000 updates, the top joke about pelicans is not the banger you want, but something totally non-sensical like "the the the the the the the the the".
 
-      RLHF is more like fine-tuning, not the magical RL you expect (like those with verifiable answers).
+  - RLHF is more like fine-tuning, not the magical RL you expect (like those with verifiable answers).
+    - Move 37 of AlphaGo: https://www.youtube.com/watch?v=HT-UZkiOLv8
+    - Aha moment of DeepSeek-R1
+      [Screenshot]
 - PREVIEW OF THINGS TO COME
   - multimodel (not just text but audio, images, video, natural conversations)
   - tasks -> agents (long, coherent, error-correcting contexts)
@@ -275,4 +290,4 @@
   - Proprietary models: on the respective websites of the LLM providers
   - Open weights models (DeepSeek, Llama): an inference provider, e.g. TogetherAI (clike Playgrounds and pick models)
   - Base models: Hyperbolic
-  - Run them locally! LMStudio
+  - Run them locally! [LMStudio](https://lmstudio.ai/)
