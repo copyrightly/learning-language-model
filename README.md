@@ -284,6 +284,7 @@
   - test-time training?, etc.
 - WHERE TO KEEP TRACK OF THEM
   - LM Arena for model rankings: https://lmarena.ai/
+  - AI models leaderboard: https://scale.com/leaderboard
   - subscribe to https://buttondown.com/ainews
   - X / Twitter
 - WHERE TO FIND THEM
