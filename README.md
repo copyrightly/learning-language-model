@@ -174,7 +174,8 @@
       
       ~= 1300 GPT-4 tokens (vocabulary size 100,277) 
     - https://tiktokenizer.vercel.app/
-      [screenshot of tiktoken]
+      ![tiktoken](tiktoken.png)
+      ![tiktokenizer](post_training_tokenizer.png)
   - Step 3: neural network training
     - neural network internals
       - LLM visualization: https://bbycroft.net/llm
@@ -222,7 +223,7 @@
       - https://github.com/thunlp/UltraChat
       - data visualization tool: https://docs.nomic.ai/
   - Hallucinations
-    - [screenshot]
+    - ![hallucination](hallucination.png)
     - Section 4.3.6 Factuality in [Llama3 paper](https://arxiv.org/pdf/2407.21783), investigated this issue  
     - Mitigation #1
       - Use model interrogation to discover model's knowledge, and programmatically augment its training dataset with knowledge-based refusals in cases where the model doesn't know. E.g.:
@@ -242,26 +243,30 @@
   - Models need tokens to think
     - The left one guesses the answer at very beginning and tries to justify the answer afterwards. The computation focuses on a single token.
     - The right one makes reasoning step by step
-    - Ask the model to use tools (e.g. "Use code")
+      - ![good_bad_math_answers](good_bad_math_answers.png)
+    - Ask the model to use tools (e.g. "Use code") (Python interpreter)
+      - ![math_reasoning](math_reasoning.png)
+      - ![use_tool_for_counting](use_tool_for_counting.png)
+      - ![wrong_spelling](wrong_spelling.png)
+    - Web search
   - Models are not good with spelling
     - Remember they see tokens (text chunks), not individual letters!
   - Bunch of other small random stuff
-    - 9.9 and 9.11  
-  - Models can (and should) use tools!
-    - Web search
-    - Code (Python interpreter)
+    - 9.9 and 9.11
+      - ![9.11_and_9.9](9.11_and_9.9.png)
 - POST-TRAINING: REINFORCEMENT LEARNING
-  - [analogy of RL]
+  - ![analogy_of_RL](analogy_of_RL.png)
+  - ![RL](RL.png)
   - AlphaGo paper: https://discovery.ucl.ac.uk/id/eprint/10045895/1/agz_unformatted_nature.pdf
   - [DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning](https://arxiv.org/abs/2501.12948)
     - https://chat.deepseek.com/ (make sure you enabled (DeepThink R1))
-      - [screenshot]
+      - ![DeepSeek_R1](DeepSeek_R1.png)
     - alternatively you can go to https://www.together.ai/ and select "DEEPSEEK R1"
   - Reinforcement Learning in un-verifiable domains => RLHF (Reinforcement Learning from Human Feedback)
     - [Fine-Tuning Language Models from Human Preferences](https://arxiv.org/abs/1909.08593)
     - e.g. prompt: "write a joke about pelicans"
     - problem: how do we score these?
-    - [screenshot of joke]
+    - ![RLHF_joke](RLHF_joke.png)
     - make reward model's output be consistent with human ordering
   - RLHF upside
     - We can run RL, in arbitrary domains! (even the unverifiable ones). This (empirically) improves the performance of the model, possibly due to the "discriminator - generator gap":
@@ -275,9 +280,9 @@
   - RLHF is more like fine-tuning, not the magical RL you expect (like those with verifiable answers).
     - Move 37 of AlphaGo: https://www.youtube.com/watch?v=HT-UZkiOLv8
     - Aha moment of DeepSeek-R1
-      [Screenshot]
+      ![DeepSeek_aha](DeepSeek_aha.png)
 - PREVIEW OF THINGS TO COME
-  - multimodel (not just text but audio, images, video, natural conversations)
+  - multimodal (not just text but audio, images, video, natural conversations)
   - tasks -> agents (long, coherent, error-correcting contexts)
   - prevasive, invisible
   - computer-using
@@ -289,6 +294,6 @@
   - X / Twitter
 - WHERE TO FIND THEM
   - Proprietary models: on the respective websites of the LLM providers
-  - Open weights models (DeepSeek, Llama): an inference provider, e.g. TogetherAI (clike Playgrounds and pick models)
+  - Open weights models (DeepSeek, Llama): an inference provider, e.g. TogetherAI (click Playgrounds and pick models)
   - Base models: Hyperbolic
   - Run them locally! [LMStudio](https://lmstudio.ai/)
